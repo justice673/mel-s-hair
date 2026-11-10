@@ -98,21 +98,17 @@ export default function FlashSale() {
     <section className="bg-cocoa px-5 py-8 sm:px-8 lg:px-10 lg:py-12">
       <div className="relative mx-auto max-w-7xl">
         <div className="mb-5 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-[0.72rem] font-medium uppercase tracking-[0.24em] text-champagne">
-              Soft launch sale
-            </p>
-            <h2 className="mt-2 font-heading text-[clamp(1.8rem,3vw,2.4rem)] font-medium tracking-tight text-pearl">
-              On discount now
-            </h2>
-          </div>
-
-          <div className="flex items-end gap-4 sm:gap-6">
-            <div className="h-[78px] overflow-hidden sm:h-[90px]">
-              <FlipTimer />
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[0.72rem] font-medium uppercase tracking-[0.24em] text-champagne">
+                Soft launch sale
+              </p>
+              <h2 className="mt-2 font-heading text-[clamp(1.8rem,3vw,2.4rem)] font-medium tracking-tight text-pearl">
+                On discount now
+              </h2>
             </div>
 
-            <div className="flex items-center gap-2 pb-1">
+            <div className="flex shrink-0 items-center gap-2 pb-1">
               <button
                 type="button"
                 aria-label="Previous sale item"
@@ -130,6 +126,10 @@ export default function FlashSale() {
                 <PiArrowRightLight size={18} />
               </button>
             </div>
+          </div>
+
+          <div className="h-[78px] overflow-hidden sm:h-[90px]">
+            <FlipTimer />
           </div>
         </div>
 
