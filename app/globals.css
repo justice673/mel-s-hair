@@ -123,11 +123,16 @@ body {
 }
 
 .mels-flip-clock {
-  --fcc-digit-block-width: 42px;
-  --fcc-digit-block-height: 58px;
-  gap: 0.35rem;
+  --fcc-digit-block-width: 28px;
+  --fcc-digit-block-height: 40px;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 0.2rem !important;
+  width: 100%;
   max-width: 100%;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 .mels-flip-clock,
@@ -141,6 +146,21 @@ body {
   display: none;
   width: 0;
   height: 0;
+}
+
+.mels-flip-clock .fcc__digit_block {
+  width: 28px !important;
+  height: 40px !important;
+  font-size: 18px !important;
+}
+
+.mels-flip-clock .fcc__separator {
+  margin: 0 0.05rem !important;
+}
+
+.mels-flip-clock .fcc__label {
+  font-size: 8px !important;
+  letter-spacing: 0.12em !important;
 }
 
 .mels-pagination {
@@ -194,15 +214,39 @@ body {
   pointer-events: none;
 }
 
+@media (min-width: 480px) {
+  .mels-flip-clock {
+    --fcc-digit-block-width: 36px;
+    --fcc-digit-block-height: 50px;
+    gap: 0.3rem !important;
+  }
+
+  .mels-flip-clock .fcc__digit_block {
+    width: 36px !important;
+    height: 50px !important;
+    font-size: 24px !important;
+  }
+
+  .mels-flip-clock .fcc__label {
+    font-size: 9px !important;
+  }
+}
+
 @media (min-width: 640px) {
   .mels-flip-clock {
     --fcc-digit-block-width: 48px;
     --fcc-digit-block-height: 66px;
+    gap: 0.35rem !important;
   }
 
   .mels-flip-clock .fcc__digit_block {
     font-size: 32px !important;
     width: 48px !important;
     height: 66px !important;
+  }
+
+  .mels-flip-clock .fcc__label {
+    font-size: 10px !important;
+    letter-spacing: 0.18em !important;
   }
 }

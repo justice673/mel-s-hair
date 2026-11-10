@@ -36,14 +36,17 @@ function FlipTimer() {
 
   if (!ready) {
     return (
-      <div className="flex h-[78px] items-end gap-2 sm:h-[90px]" aria-hidden>
+      <div
+        className="flex h-[58px] items-end gap-1.5 min-[480px]:h-[70px] sm:h-[90px] sm:gap-2"
+        aria-hidden
+      >
         {["Days", "Hours", "Mins", "Secs"].map((label) => (
-          <div key={label} className="flex flex-col items-center gap-1.5">
+          <div key={label} className="flex flex-col items-center gap-1">
             <div className="flex gap-0.5">
-              <span className="block h-[58px] w-[42px] rounded-[2px] bg-pearl sm:h-[66px] sm:w-[48px]" />
-              <span className="block h-[58px] w-[42px] rounded-[2px] bg-pearl sm:h-[66px] sm:w-[48px]" />
+              <span className="block h-10 w-7 rounded-[2px] bg-pearl min-[480px]:h-[50px] min-[480px]:w-9 sm:h-[66px] sm:w-12" />
+              <span className="block h-10 w-7 rounded-[2px] bg-pearl min-[480px]:h-[50px] min-[480px]:w-9 sm:h-[66px] sm:w-12" />
             </div>
-            <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-champagne">
+            <span className="text-[8px] font-medium uppercase tracking-[0.12em] text-champagne sm:text-[10px] sm:tracking-[0.18em]">
               {label}
             </span>
           </div>
@@ -57,16 +60,16 @@ function FlipTimer() {
       to={SALE_ENDS_AT}
       labels={["Days", "Hours", "Mins", "Secs"]}
       labelStyle={{
-        fontSize: 10,
+        fontSize: 8,
         fontWeight: 500,
         textTransform: "uppercase",
-        letterSpacing: "0.18em",
+        letterSpacing: "0.12em",
         color: "#8a8a8a",
       }}
       digitBlockStyle={{
-        width: 42,
-        height: 58,
-        fontSize: 28,
+        width: 28,
+        height: 40,
+        fontSize: 18,
         fontFamily:
           "var(--font-outfit), ui-sans-serif, system-ui, sans-serif",
         fontWeight: 500,
@@ -75,7 +78,7 @@ function FlipTimer() {
         borderRadius: 2,
       }}
       dividerStyle={{ color: "rgba(255, 255, 255, 0.2)", height: 1 }}
-      separatorStyle={{ color: "#8a8a8a", size: 5 }}
+      separatorStyle={{ color: "#8a8a8a", size: 3 }}
       duration={0.6}
       showSeparators
       hideOnComplete={false}
@@ -128,7 +131,7 @@ export default function FlashSale() {
             </div>
           </div>
 
-          <div className="h-[78px] overflow-hidden sm:h-[90px]">
+          <div className="w-full min-w-0 lg:w-auto">
             <FlipTimer />
           </div>
         </div>
