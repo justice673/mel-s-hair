@@ -75,13 +75,21 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`group relative text-[0.78rem] font-medium uppercase tracking-[0.18em] transition-opacity hover:opacity-100 ${
-                      active ? "opacity-100" : "opacity-80"
-                    }`}
+                    className={`group relative inline-block text-[0.78rem] font-medium uppercase tracking-[0.18em] transition-[color,transform,letter-spacing] duration-300 ease-out hover:tracking-[0.22em] hover:text-champagne ${
+                      overlay
+                        ? active
+                          ? "text-pearl"
+                          : "text-pearl/75 hover:text-champagne"
+                        : active
+                          ? "text-cocoa"
+                          : "text-cocoa-muted hover:text-champagne-deep"
+                    } ${active ? "tracking-[0.2em]" : ""}`}
                   >
-                    {link.label}
+                    <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-px group-hover:scale-[1.04]">
+                      {link.label}
+                    </span>
                     <span
-                      className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-champagne transition-transform duration-300 ${
+                      className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-champagne transition-transform duration-500 ease-out ${
                         active
                           ? "scale-x-100"
                           : "scale-x-0 group-hover:scale-x-100"
@@ -165,10 +173,15 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-between py-5 font-heading text-4xl font-medium tracking-tight text-pearl"
+                  className="group flex items-center justify-between py-5 font-heading text-4xl font-medium tracking-tight text-pearl transition-[color,padding] duration-300 hover:pl-2 hover:text-champagne"
                 >
-                  {link.label}
-                  <PiArrowUpRightLight size={22} className="text-champagne" />
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    {link.label}
+                  </span>
+                  <PiArrowUpRightLight
+                    size={22}
+                    className="text-champagne transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
                 </Link>
               </li>
             ))}
