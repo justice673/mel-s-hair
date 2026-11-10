@@ -56,7 +56,7 @@ export default function Navbar() {
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color,color,box-shadow] duration-500 ${
           overlay
             ? "border-b border-transparent bg-transparent text-pearl"
-            : "border-b border-line bg-pearl text-cocoa shadow-[0_1px_0_rgba(43,33,28,0.04)]"
+            : "border-b border-line bg-pearl text-cocoa shadow-[0_1px_0_rgba(0,0,0,0.05)]"
         }`}
       >
         <nav className="mx-auto flex h-[4.25rem] w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">

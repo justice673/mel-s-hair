@@ -81,7 +81,7 @@ export default function SearchPanel({ open, onClose }: SearchPanelProps) {
         onClick={onClose}
       />
 
-      <div className="absolute inset-x-0 top-full z-[55] border-b border-line bg-pearl text-cocoa shadow-[0_12px_40px_rgba(43,33,28,0.08)]">
+      <div className="absolute inset-x-0 top-full z-[55] border-b border-line bg-pearl text-cocoa shadow-[0_12px_40px_rgba(0,0,0,0.08)]">
         <div className="mx-auto max-w-7xl px-5 py-4 sm:px-8 lg:px-10">
           <div className="flex items-center gap-3 border-b border-line pb-4">
             <PiMagnifyingGlassLight

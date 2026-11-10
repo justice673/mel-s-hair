@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { PiArrowUpRightLight } from "react-icons/pi";
 import PageShell from "@/components/PageShell";
 import ProductCard from "@/components/shop/ProductCard";
@@ -33,7 +34,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function TextureDetailPage({ params }: PageProps) {
+async function TextureDetail({ params }: PageProps) {
   const { slug } = await params;
   const texture = textureGuides[slug as TextureSlug];
   if (!texture) notFound();
@@ -43,7 +44,7 @@ export default async function TextureDetailPage({ params }: PageProps) {
   );
 
   return (
-    <PageShell>
+    <>
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-20">
         <div className="relative aspect-[4/5] overflow-hidden bg-blush">
           <Image
@@ -100,6 +101,29 @@ export default async function TextureDetailPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+export default function TextureDetailPage({ params }: PageProps) {
+  return (
+    <PageShell>
+      <Suspense
+        fallback={
+          <div className="mx-auto max-w-7xl animate-pulse px-5 py-16 sm:px-8 lg:px-10">
+            <div className="grid gap-10 lg:grid-cols-2">
+              <div className="aspect-[4/5] bg-blush" />
+              <div className="space-y-4">
+                <div className="h-3 w-28 bg-blush" />
+                <div className="h-12 w-2/3 bg-blush" />
+                <div className="h-4 w-full bg-blush" />
+              </div>
+            </div>
+          </div>
+        }
+      >
+        <TextureDetail params={params} />
+      </Suspense>
     </PageShell>
   );
 }

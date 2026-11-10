@@ -61,7 +61,7 @@ function FlipTimer() {
         fontWeight: 500,
         textTransform: "uppercase",
         letterSpacing: "0.18em",
-        color: "#c4a17a",
+        color: "#8a8a8a",
       }}
       digitBlockStyle={{
         width: 42,
@@ -70,12 +70,12 @@ function FlipTimer() {
         fontFamily:
           "var(--font-outfit), ui-sans-serif, system-ui, sans-serif",
         fontWeight: 500,
-        backgroundColor: "#f6f1ed",
-        color: "#2b211c",
+        backgroundColor: "#f7f7f7",
+        color: "#111111",
         borderRadius: 2,
       }}
-      dividerStyle={{ color: "rgba(196, 161, 122, 0.35)", height: 1 }}
-      separatorStyle={{ color: "#c4a17a", size: 5 }}
+      dividerStyle={{ color: "rgba(255, 255, 255, 0.2)", height: 1 }}
+      separatorStyle={{ color: "#8a8a8a", size: 5 }}
       duration={0.6}
       showSeparators
       hideOnComplete={false}
@@ -179,7 +179,7 @@ export default function FlashSale() {
                     </p>
                   </div>
 
-                  <div className="relative flex flex-col justify-center bg-[linear-gradient(135deg,#3a2f28_0%,#2b211c_48%,#4a3b32_100%)] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+                  <div className="relative flex flex-col justify-center bg-[linear-gradient(135deg,#2a2a2a_0%,#111111_48%,#1f1f1f_100%)] px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
                     <div
                       className="pointer-events-none absolute -left-16 top-0 hidden h-full w-24 -skew-x-12 bg-cocoa lg:block"
                       aria-hidden

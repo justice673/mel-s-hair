@@ -17,11 +17,11 @@ export default function Hero() {
       </div>
 
       <div
-        className="absolute inset-0 bg-[linear-gradient(105deg,rgba(43,33,28,0.78)_0%,rgba(43,33,28,0.55)_34%,rgba(43,33,28,0.18)_62%,rgba(43,33,28,0.08)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(105deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.55)_34%,rgba(0,0,0,0.2)_62%,rgba(0,0,0,0.08)_100%)]"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(235,215,208,0.22),transparent_42%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.12),transparent_42%)]"
         aria-hidden
       />
 

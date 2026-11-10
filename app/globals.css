@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f1ed;
-  --foreground: #2b211c;
+  --background: #f7f7f7;
+  --foreground: #111111;
 }
 
 @theme inline {
-  --color-background: #f6f1ed;
-  --color-foreground: #2b211c;
-  --color-pearl: #f6f1ed;
-  --color-blush: #ebd7d0;
-  --color-cocoa: #2b211c;
-  --color-cocoa-soft: #5c4a40;
-  --color-cocoa-muted: #8a7466;
-  --color-champagne: #c4a17a;
-  --color-champagne-deep: #a8845c;
-  --color-rose: #b87a6e;
-  --color-rose-deep: #9e6358;
-  --color-line: rgba(43, 33, 28, 0.1);
-  --color-line-strong: rgba(43, 33, 28, 0.18);
+  --color-background: #f7f7f7;
+  --color-foreground: #111111;
+  --color-pearl: #f7f7f7;
+  --color-blush: #ebebeb;
+  --color-cocoa: #111111;
+  --color-cocoa-soft: #2e2e2e;
+  --color-cocoa-muted: #6b6b6b;
+  --color-champagne: #8a8a8a;
+  --color-champagne-deep: #4a4a4a;
+  --color-rose: #1a1a1a;
+  --color-rose-deep: #3f3f3f;
+  --color-line: rgba(17, 17, 17, 0.1);
+  --color-line-strong: rgba(17, 17, 17, 0.2);
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-cormorant), ui-serif, Georgia, serif;
 }
@@ -38,8 +38,8 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, #c4a17a 35%, transparent);
-  color: #2b211c;
+  background: color-mix(in srgb, #111111 18%, transparent);
+  color: #111111;
 }
 
 @keyframes fade-up {
@@ -164,8 +164,8 @@ body {
   min-width: 2.5rem;
   height: 2.5rem;
   padding: 0 0.65rem;
-  border: 1px solid rgba(43, 33, 28, 0.14);
-  color: #2b211c;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  color: #111111;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -177,15 +177,15 @@ body {
 }
 
 .mels-pagination__link:hover {
-  border-color: rgba(43, 33, 28, 0.35);
-  background: rgba(235, 215, 208, 0.35);
+  border-color: rgba(17, 17, 17, 0.4);
+  background: rgba(17, 17, 17, 0.05);
 }
 
 .mels-pagination__item--active .mels-pagination__link,
 .mels-pagination__link--active {
-  background: #2b211c;
-  border-color: #2b211c;
-  color: #f6f1ed;
+  background: #111111;
+  border-color: #111111;
+  color: #f7f7f7;
 }
 
 .mels-pagination__item--disabled .mels-pagination__link,
