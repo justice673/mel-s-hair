@@ -1,26 +1,208 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f1ed;
+  --foreground: #2b211c;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #f6f1ed;
+  --color-foreground: #2b211c;
+  --color-pearl: #f6f1ed;
+  --color-blush: #ebd7d0;
+  --color-cocoa: #2b211c;
+  --color-cocoa-soft: #5c4a40;
+  --color-cocoa-muted: #8a7466;
+  --color-champagne: #c4a17a;
+  --color-champagne-deep: #a8845c;
+  --color-rose: #b87a6e;
+  --color-rose-deep: #9e6358;
+  --color-line: rgba(43, 33, 28, 0.1);
+  --color-line-strong: rgba(43, 33, 28, 0.18);
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-cormorant), ui-serif, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, #c4a17a 35%, transparent);
+  color: #2b211c;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes soft-zoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease both;
+}
+
+.animate-soft-zoom {
+  animation: soft-zoom 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-draw-line {
+  transform-origin: left center;
+  animation: draw-line 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+
+.delay-2 {
+  animation-delay: 0.28s;
+}
+
+.delay-3 {
+  animation-delay: 0.44s;
+}
+
+.delay-4 {
+  animation-delay: 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-soft-zoom,
+  .animate-draw-line {
+    animation: none;
+  }
+}
+
+.mels-flip-clock {
+  --fcc-digit-block-width: 42px;
+  --fcc-digit-block-height: 58px;
+  gap: 0.35rem;
+  max-width: 100%;
+  overflow: hidden !important;
+}
+
+.mels-flip-clock,
+.mels-flip-clock * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mels-flip-clock::-webkit-scrollbar,
+.mels-flip-clock *::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.mels-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mels-pagination__item {
+  display: inline-flex;
+}
+
+.mels-pagination__link {
+  display: grid;
+  place-items: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.65rem;
+  border: 1px solid rgba(43, 33, 28, 0.14);
+  color: #2b211c;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.mels-pagination__link:hover {
+  border-color: rgba(43, 33, 28, 0.35);
+  background: rgba(235, 215, 208, 0.35);
+}
+
+.mels-pagination__item--active .mels-pagination__link,
+.mels-pagination__link--active {
+  background: #2b211c;
+  border-color: #2b211c;
+  color: #f6f1ed;
+}
+
+.mels-pagination__item--disabled .mels-pagination__link,
+.mels-pagination__link--disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .mels-flip-clock {
+    --fcc-digit-block-width: 48px;
+    --fcc-digit-block-height: 66px;
+  }
+
+  .mels-flip-clock .fcc__digit_block {
+    font-size: 32px !important;
+    width: 48px !important;
+    height: 66px !important;
+  }
 }
